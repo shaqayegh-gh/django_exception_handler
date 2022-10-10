@@ -295,14 +295,22 @@ def exception_handler(
             attr = context.get('view').action
 
     if api_settings.FARSI_EXCEPTION:
-        persianDict = settings.persianDict
-        response = dict(
-            type=_get_error_type(exc),
-            code=exception_code,
-            detail=_get_detail(exc, exception_key),
-            attr=attr,
-            fa_details=_get_farsi_detail(exception_code, attr, persianDict)
-        )
+        persianDict = getattr(settings, 'persianDict', None)
+        if persianDict:
+            response = dict(
+                type=_get_error_type(exc),
+                code=exception_code,
+                detail=_get_detail(exc, exception_key),
+                attr=attr,
+                fa_details=_get_farsi_detail(exception_code, attr, persianDict)
+            )
+        else:
+            response = dict(
+                type=_get_error_type(exc),
+                code=exception_code,
+                detail=_get_detail(exc, exception_key),
+                attr=attr
+            )
     else:
         response = dict(
             type=_get_error_type(exc),
