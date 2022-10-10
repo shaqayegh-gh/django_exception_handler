@@ -295,7 +295,7 @@ def exception_handler(
             attr = context.get('view').action
 
     if api_settings.FARSI_EXCEPTION:
-        persianDict = getattr(settings, 'persianDict', None)
+        persianDict = getattr(settings, 'PERSIAN_DICT', None)
         if persianDict:
             response = dict(
                 type=_get_error_type(exc),

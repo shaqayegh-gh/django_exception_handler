@@ -37,6 +37,6 @@ EXCEPTIONS_HOG = {
 
 if FARSI_EXCEPTION is true, you should add your persian dict and errors in settings.py
 ```
-persianDict = yourPersianDict
-PersianErrorCodes = yourErrorCode
+PERSIAN_DICT = yourPersianDict
+PERSIAN_ERROR_CODES = yourErrorCode
 ```

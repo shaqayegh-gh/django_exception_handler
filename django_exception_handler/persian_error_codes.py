@@ -1,6 +1,6 @@
 from django.conf import settings
 
-PersianErrorCodes = getattr(settings, 'PersianErrorCodes', dict())
+PERSIAN_ERROR_CODES = getattr(settings, 'PERSIAN_ERROR_CODES', dict())
 
 persianEnglishErrorCodesDict = dict(
     sample_error={'has_attribute': False, 'farsi_detail_attrs': 'این یک خطای نمونه می باشد', 'farsi_detail': 'این یک خطای نمونه می باشد'},
@@ -25,4 +25,4 @@ persianEnglishErrorCodesDict = dict(
                        'farsi_detail': 'برای انجم درخواست به حساب کاربری خود وارد شوید'},
 )
 
-persianEnglishErrorCodesDict.update(PersianErrorCodes)
+persianEnglishErrorCodesDict.update(PERSIAN_ERROR_CODES)
