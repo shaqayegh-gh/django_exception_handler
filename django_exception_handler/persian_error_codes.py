@@ -1,6 +1,6 @@
-
 from django.conf import settings
-PersianErrorCodes = settings.PersianErrorCodes
+
+PersianErrorCodes = getattr(settings, 'PersianErrorCodes', dict())
 
 persianEnglishErrorCodesDict = dict(
     sample_error={'has_attribute': False, 'farsi_detail_attrs': 'این یک خطای نمونه می باشد', 'farsi_detail': 'این یک خطای نمونه می باشد'},
